@@ -1,0 +1,14 @@
+node_modules/
+data/admin.json
+data/*.bak
+data/*before*
+*.bak
+server.js.bak
+server.js.before-*
+public/*.before-*
+public/uploads/*
+!public/uploads/background-1794396250077.jpg
+apply-batch*.js
+stories-batch*.json
+data/*backup*
+**/*.before-*

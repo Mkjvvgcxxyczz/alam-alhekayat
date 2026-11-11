@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<title>عالم الحكايات</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="logo">✦ عالم الحكايات ✦</div>
+  <button id="adminBtn" onclick="openAdmin()">الإدارة</button>
+</header>
+
+<div class="welcome">
+  <h1>أهلاً بك في عالم الحكايات</h1>
+  <p>حيث تبدأ الحكاية ولا تنتهي المتعة</p>
+</div>
+
+<div class="ticker">
+  <div id="tickerText">مرحباً بكم في عالم الحكايات ✦ اكتشفوا أجمل القصص والروايات ✦</div>
+</div>
+
+<section class="search">
+  <input id="searchInput" placeholder="ابحث عن قصة تحبها...">
+</section>
+
+<h2>✦ أقسام الحكايات ✦</h2>
+<div id="categories" class="categories"></div>
+
+<h2>✦ أحدث الحكايات ✦</h2>
+<div id="stories" class="stories"></div>
+
+<div id="adminPanel" class="admin-panel hidden">
+  <div class="admin-box">
+    <button class="close" onclick="closeAdmin()">✕</button>
+    <h2>لوحة المدير</h2>
+    <input id="adminUser" placeholder="اسم المدير">
+    <input id="adminPass" type="password" placeholder="كلمة المرور">
+    <button onclick="loginAdmin()">دخول</button>
+    <div id="adminTools" class="hidden">
+      <h3>إدارة التطبيق</h3>
+      <h4>تغيير خلفية التطبيق</h4>
+      <input id="backgroundFile" type="file" accept="image/jpeg,image/png,image/webp,image/gif" onchange="previewBackground()">
+      <img id="backgroundPreview" class="background-preview hidden" alt="معاينة الخلفية">
+      <button onclick="uploadBackground()">رفع وحفظ الخلفية</button>
+      <p>الصيغ المدعومة JPG وPNG وWebP وGIF، بحد أقصى 5 ميغابايت.</p>
+
+      <input id="newTicker" placeholder="نص الشريط المتحرك">
+      <button onclick="saveTicker()">حفظ الشريط</button>
+      <input id="storyTitle" placeholder="عنوان القصة">
+      <textarea id="storyDesc" placeholder="وصف القصة"></textarea>
+      <select id="storyCategory">
+        <option value="">اختر قسم القصة</option>
+        <option>الحب والرومانسية</option>
+        <option>الخيانة والغدر</option>
+        <option>الفراق والاشتياق</option>
+        <option>الانتقام</option>
+        <option>الرعب والغموض</option>
+        <option>الجرائم والتحقيق</option>
+        <option>الخيال العلمي</option>
+        <option>المغامرات</option>
+        <option>قصص واقعية</option>
+        <option>قصص حزينة</option>
+        <option>الصداقة والوفاء</option>
+        <option>العائلة</option>
+        <option>قصص تاريخية</option>
+        <option>قصص إسلامية</option>
+        <option>التشويق والإثارة</option>
+        <option>المافيا والعصابات</option>
+        <option>النجاح والطموح</option>
+        <option>قصص الأطفال</option>
+        <option>قصص قصيرة</option>
+        <option>روايات طويلة</option>
+        <option>المدرسة والجامعة</option>
+        <option>قصص اجتماعية</option>
+      </select>
+      <textarea id="storyContent" placeholder="محتوى القصة"></textarea>
+      <button onclick="addStory()">إضافة قصة</button>\n      <h3>إدارة القصص</h3>\n      <div id="adminStories"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
+

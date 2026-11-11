@@ -1,0 +1,247 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #090909;
+  color: #f5f5f5;
+  font-family: sans-serif;
+  padding-bottom: 40px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  background: #111;
+  border-bottom: 1px solid #b38b35;
+}
+
+.logo {
+  color: #d9b45b;
+  font-size: 23px;
+  font-weight: bold;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #c49b40; }
+  to { text-shadow: 0 0 20px #f5d77d; }
+}
+
+button {
+  background: linear-gradient(135deg,#b38b35,#f5dc91);
+  color: #111;
+  border: none;
+  border-radius: 9px;
+  padding: 11px 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.welcome {
+  text-align: center;
+  padding: 38px 15px;
+  background: radial-gradient(circle,#292010,#090909 75%);
+}
+
+.welcome h1 {
+  color: #e4c16a;
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.welcome p {
+  color: #aaa;
+}
+
+.ticker {
+  overflow: hidden;
+  background: #b38b35;
+  color: #111;
+  padding: 12px;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+#tickerText {
+  display: inline-block;
+  padding-right: 100%;
+  animation: move 18s linear infinite;
+}
+
+@keyframes move {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+.search {
+  padding: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 13px;
+  margin: 8px 0;
+  background: #181818;
+  color: white;
+  border: 1px solid #8d6c2c;
+  border-radius: 8px;
+}
+
+h2 {
+  color: #d9b45b;
+  text-align: center;
+  margin: 25px 10px;
+}
+
+.categories, .stories {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+  padding: 12px;
+}
+
+.category, .story {
+  background: linear-gradient(145deg,#201b10,#121212);
+  border: 1px solid #70551e;
+  border-radius: 12px;
+  padding: 18px 10px;
+  text-align: center;
+}
+
+.category {
+  color: #e2c16c;
+  cursor: pointer;
+}
+
+.story h3 {
+  color: #e2c16c;
+  margin-bottom: 10px;
+}
+
+.story p {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.admin-panel {
+  position: fixed;
+  inset: 0;
+  background: #000d;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.admin-box {
+  background: #151515;
+  border: 1px solid #c39a43;
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 450px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.admin-box h2 {
+  margin: 15px;
+}
+
+.admin-box button {
+  margin: 5px 0;
+}
+
+.close {
+  float: left;
+}
+
+.hidden {
+  display: none !important;
+}
+
+textarea {
+  min-height: 90px;
+}
+
+
+/* تحسين نافذة قراءة الروايات */
+#readerModal {
+  overflow-y: auto;
+  align-items: center;
+  padding: 12px;
+}
+
+#readerModal .admin-box {
+  width: 100%;
+  max-width: 720px;
+  max-height: 94vh;
+  overflow-y: auto;
+  padding: 22px 18px;
+  border: 1px solid #d9b45b;
+  background: linear-gradient(145deg, #19150d, #101010);
+}
+
+#readerModal .admin-box h2 {
+  color: #f5dc91;
+  font-size: 23px;
+}
+
+#readerModal .admin-box h3 {
+  color: #e4c16a;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+#readerModal .admin-box > div:nth-of-type(1) {
+  font-size: 19px;
+  line-height: 2.3;
+  text-align: right;
+  overflow-wrap: anywhere;
+  padding: 10px 3px;
+}
+
+#readerModal .admin-box button {
+  min-height: 44px;
+  padding: 11px 16px;
+}
+
+#readerModal .admin-box button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  #readerModal {
+    padding: 7px;
+  }
+
+  #readerModal .admin-box {
+    max-height: 96vh;
+    padding: 17px 12px;
+  }
+
+  #readerModal .admin-box > div:nth-of-type(1) {
+    font-size: 18px;
+    line-height: 2.2;
+  }
+}
+
+
+
+.background-preview {
+  display: block;
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border: 2px solid #b38b35;
+  border-radius: 12px;
+  margin: 12px 0;
+}
